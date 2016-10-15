@@ -8,11 +8,9 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "declaration": true,
-    "moduleResolution": "node"
   },
-  "files": [
-    "./typings/index.d.ts",
-    "./ng2-summernote.ts"
+  "exclude": [
+    "node_modules"
   ],
   "compileOnSave": false
 }

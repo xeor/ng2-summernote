@@ -5,32 +5,24 @@ import {
   ElementRef,
   EventEmitter,
   NgZone,
-  Provider,
-  Inject,
-  forwardRef
+  Inject
 } from '@angular/core';
-import {NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Http, Headers, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-declare var $: any;
+// declare var $: any;
+let $ = require('jquery');
+//$.fn.summernote = require('summernote');
+//require('summernote');
 
-// Control Value accessor provider
-const NG2SUMMERNOTE_CONTROL_VALUE_ACCESSOR = new Provider(
-  NG_VALUE_ACCESSOR,
-  {
-    useExisting: forwardRef(() => Ng2Summernote),
-    multi: true
-  }
-);
+//import * as $ from 'jquery';
+//import '../scripts/progress-bar'; // some plugin
 
 @Component({
   selector: 'ng2-summernote',
-  providers: [NG2SUMMERNOTE_CONTROL_VALUE_ACCESSOR],
   template: `<div class="summernote"></div>`,
 })
-
 export class Ng2Summernote {
 
     @Input() height: number;
